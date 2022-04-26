@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mybatis.mapper.User_healthMapper">
+    <select id="getName" resultType="com.example.demo.mybatis.bean.User_health">
+        SELECT * FROM user_health WHERE user_name=#{user_name}
+    </select>
+
+    <insert id="insertData">
+        insert into user_health(
+        user_name,
+        create_time,
+        address,
+        leave_flag,
+        leave_case,
+        rest_flag,
+        user_id
+        ) values(
+        #{user_name},
+        #{create_time},
+        #{address},
+        #{leave_flag},
+        #{leave_case},
+        #{rest_flag},
+        #{user_id}
+        );
+    </insert>
+</mapper>
